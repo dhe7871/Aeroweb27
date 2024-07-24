@@ -131,7 +131,8 @@ nav img{
 .footer>div:hover{
     background-color: whitesmoke;
     color: black;
-    border-radius: 20px;
+    border-radius: 13px;
+    padding: 5px;
 }
 
 
