@@ -149,7 +149,7 @@ nav img{
         font-size: 2rem;
     }
     .expand_more{
-        height: 10vh;
+        height: 8vh;
     }
 }
 @media only screen and (min-width: 375px) and (max-width: 576px){
@@ -165,7 +165,7 @@ nav img{
         font-size: 3rem;
     }
     .expand_more{
-        height: 10vh;
+        height: 8vh;
     }
 }
 @media only screen and (min-width: 576px) and (max-width: 768px){
