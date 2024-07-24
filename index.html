@@ -30,33 +30,6 @@
 </head>
 
 <body>
-  <?php
-    function get_count() {
-      $count_file = 'visitor_count.txt';
-      if (file_exists($count_file)) {
-        $count = file_get_contents($count_file);
-        return intval($count);
-      } else {
-        return 0;
-      }
-    }
-
-    function increment_count() {
-      $count = get_count();
-      $count++;
-      file_put_contents('visitor_count.txt', $count);
-    }
-
-    // Error handling (optional)
-    try {
-      increment_count();
-      $count = get_count();
-
-    } catch (Exception $e) {
-      echo "Error: " . $e->getMessage();
-    }
-  ?>
-
 
   <div class="container-fluid">
     <div class="row navbox">
@@ -156,7 +129,7 @@
     
     <div class="footer">
       <div>Created By Dheeraj</div>
-      <div class="visiters">Visiters: <?php echo $count; ?></div>
+      <div class="visiters">Visiters: </div>
     </div>
     
   </div>
