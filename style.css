@@ -65,6 +65,23 @@ nav img{
     text-align: center;
 }
 
+.bookCard{
+    width: 60vw;
+    height: 30vh;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.books{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10vh;
+}
+
+
 .semesters{
     padding-left: 5%;
     padding-right: 5%;
@@ -95,14 +112,14 @@ nav img{
     text-decoration: none;
     color: white;
 }
-.semCard img{
+.genCard img{
     border-radius: 10px;
 }
-.semCard:hover > img{
+.genCard:hover > img{
     transition: .1s ease;
     opacity: 0.7;
 }
-.semCard:hover{
+.genCard:hover{
     background-color: rgba(225, 224, 224, 0.979);
     /* background-image: url("add_box_24dp_FILL0_wght600_GRAD0_opsz24.png"); */
     
@@ -131,8 +148,7 @@ nav img{
 .footer>div:hover{
     background-color: whitesmoke;
     color: black;
-    border-radius: 13px;
-    padding: 5px;
+    border-radius: 20px;
 }
 
 
@@ -143,6 +159,18 @@ nav img{
         padding-left: 3vw;;
         padding-right: 3vw;
     }
+
+    #skipScroll{
+        padding-bottom: 6vh;
+    }
+    .bookCard{
+        width: 70vw;
+        height: 15vh;
+    }
+    .books{
+        margin-bottom: 2vh;
+    }
+
     .semCard{
         height: 30vh;
     }
@@ -159,6 +187,18 @@ nav img{
         padding-left: 3vw;;
         padding-right: 3vw;
     }
+
+    #skipScroll{
+        padding-bottom: 6vh;
+    }
+    .bookCard{
+        width: 70vw;
+        height: 20vh;
+    }
+    .books{
+        margin-bottom: 4vh;
+    }
+
     .semCard{
         height: 40vh;
     }
@@ -180,4 +220,15 @@ nav img{
         font-size: 1.5rem;
     }
     
+    #skipScroll{
+        padding-bottom: 6vh;
+    }
+    .bookCard{
+        width: 65vw;
+        height: 25vh;
+    }
+    .books{
+        margin-bottom: 6vh;
+    }
+
 }
