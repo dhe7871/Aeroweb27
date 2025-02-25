@@ -205,32 +205,45 @@ document.addEventListener('DOMContentLoaded', ()=>{
             console.error(message);
     })
 
-    //if no fingerprint is there in localstorage generate one
-    if(!localStorage.getItem('uid')){
-        FingerprintJS.load().then(fp => {
-            fp.get().then(result => {
-            const uid = result.visitorId;
-            console.log("Your unique visitor ID is:", uid);
-            localStorage.setItem("uid", uid);
-            })
+    function getUid(){
+        return new Promise((resolve, reject)=>{
+            let uid = localStorage.getItem('uid');
+            if(uid){
+                resolve(uid);
+            }else{
+                FingerprintJS.load().then(fp=>{
+                    fp.get().then(result=>{
+                        uid = result.visitorId;
+                        localStorage.setItem('uid', uid);
+                        resolve(uid);
+                    }).catch(reject);
+                }).catch(reject);
+            }
+        });
+    }
+
+    function sendUserData(uid){
+        fetch(`${dataColAPIUrl}/userData`,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({'uid': uid, 'entry': true})
+        }).then(response => {
+            if(!response.ok){
+                throw new Error('Network Response was not OK!');
+            }
+            return response.json();
+        }).catch(error =>{
+            message = `Error: ${error}`;
+            console.error(message);
         })
     }
 
-    uid = localStorage.getItem('uid')
-    fetch(`${dataColAPIUrl}/userData`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({'uid': uid, 'entry': true})
-    }).then(response => {
-        if(!response.ok){
-            throw new Error('Network Response was not OK!')
-        }
-        return response.json()
+    getUid().then(uid =>{
+        sendUserData(uid);
     }).catch(error =>{
-        message = `Error: ${error}`
-        console.error(message)
+        console.error(`Error getting UID: ${error}`);
     })
 })
 
