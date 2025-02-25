@@ -1,3 +1,6 @@
+const dataColAPIUrl = 'https://aerowebapi-g8e0crb4ekhsgddg.centralindia-01.azurewebsites.net'
+// const dataColAPIUrl = 'http://127.0.0.1:8000'
+const counterAPIUrl = 'https://counterapi-d6d4drfdawacbxa4.centralindia-01.azurewebsites.net';
 var clicks = 0;
 var feedclick = false;
 const search = document.getElementById('search');
@@ -25,7 +28,7 @@ let i = 1;
 for (value of semester_links) {
     let div = document.createElement('div');
     div.setAttribute('class', `col ${(i % 2 == 0) ? 'evenSem' : 'oddSem'}`);
-    div.innerHTML = `<a href=${value} target="_blank">
+    div.innerHTML = `<a href=${value} target="_blank" class='mlink'>
                         <div class="semCard genCard">
                             <img src="sem_${i}.jpg" alt="Semester ${i}" style="height: 100%; width: 100%;">
                         </div>
@@ -34,17 +37,6 @@ for (value of semester_links) {
     i++;
 }
 
-const p = fetch('https://api.counterapi.dev/v1/Aeroweb27/counter2/up');
-p.then((response) => {
-    if (!response.ok) {
-        console.log('Error in fetching Visiter count...');
-    }
-    return response.json();
-}).then((response) => {
-    counter.innerText = `Visiters: ${response.count}`;
-    localStorage.setItem("counter",response.count);
-    
-});
 
 search.addEventListener('click', searchbar);
 function searchbar() {
@@ -81,6 +73,8 @@ document.addEventListener('keydown', (event) => {
     }
 })
 
+
+//code for getting feedback
 feedbtn.addEventListener('click', ()=>{
     if(!feedclick){
         form.style.display = 'flex';
@@ -159,7 +153,7 @@ submitbtn.addEventListener('click', ()=>{
         }
         console.log("feeddata: ",feedData)
         //code to send data to the cloud is to be written here
-        fetch('https://aerowebapi-g8e0crb4ekhsgddg.centralindia-01.azurewebsites.net/postfeedback', {
+        fetch(`${dataColAPIUrl}/postfeedback`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -195,3 +189,90 @@ submitbtn.addEventListener('click', ()=>{
     }
      
 })
+
+//new code
+document.addEventListener('DOMContentLoaded', ()=>{
+    fetch(`${counterAPIUrl}/countUp/Aeroweb27Counter`).then(response =>{
+        if(!response.ok){
+            throw new Error('Network response was not OK.')
+        }
+        return response.json()
+    }).then(data =>{
+        document.getElementById('visiters').innerHTML = `Visiters: ${data['count']}`
+        localStorage.setItem('AerowebCounterValue', data['count'])
+    }).catch(error =>{
+            message = `Error: ${error}`;
+            console.error(message);
+    })
+
+    //if no fingerprint is there in localstorage generate one
+    if(!localStorage.getItem('uid')){
+        FingerprintJS.load().then(fp => {
+            fp.get().then(result => {
+            const uid = result.visitorId;
+            console.log("Your unique visitor ID is:", uid);
+            localStorage.setItem("uid", uid);
+            })
+        })
+    }
+
+    uid = localStorage.getItem('uid')
+    fetch(`${dataColAPIUrl}/userData`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({'uid': uid, 'entry': true})
+    }).then(response => {
+        if(!response.ok){
+            throw new Error('Network Response was not OK!')
+        }
+        return response.json()
+    }).catch(error =>{
+        message = `Error: ${error}`
+        console.error(message)
+    })
+})
+
+window.addEventListener('beforeunload', function (event){
+    payload = JSON.stringify({'uid': localStorage.getItem('uid'), 'entry': false});
+
+    fetch(`${dataColAPIUrl}/userData`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: payload,
+        keepalive: true
+    }).then(response => {
+        if(!response.ok){
+            throw new Error('Network Response was not OK!')
+        }
+        return response.json()
+    }).catch(error =>{
+        message = `Error: ${error}`
+        console.error(message)
+    })
+})
+
+semlinks = document.getElementsByClassName('mlink')
+for(let i = 0;i < semlinks.length; i++){
+    semlinks[i].onclick = function (){
+        fetch(`${dataColAPIUrl}/semClick`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({'uid': localStorage.getItem('uid'), 'sem': i})
+        }).then(response => {
+            if(!response.ok){
+                throw new Error('Network response was not ok!')
+            }
+            return response.json()
+        }).then(data => {
+            console.log(data)
+        }).catch(error => {
+            console.error({'message': `Error: ${error}`})
+        })
+    }
+}
