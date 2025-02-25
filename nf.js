@@ -5,7 +5,7 @@ const counter_nf = document.getElementById('visiters_nf');
 
 
 
-counter_nf.innerText = `Visiters: ${localStorage.getItem("counter")}`;
+counter_nf.innerText = `Visiters: ${localStorage.getItem("AerowebCounterValue")}`;
 
 search.addEventListener('click', searchbar);
 function searchbar() {
