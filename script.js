@@ -8,7 +8,7 @@ const inputbox = document.getElementById('inputbox');
 const counter = document.getElementById('visiters');
 const semesters = document.getElementById('semesters');
 const form = document.getElementById('feedform');
-const feedbtn = document.getElementById('feedbtn')
+const feedbtn = document.getElementById('feedbtn');
 const submitbtn = document.getElementById('submitbtn');
 
 semester_links = [
@@ -37,6 +37,11 @@ for (value of semester_links) {
     i++;
 }
 
+window.onload = function(){
+    if(platform.os.family == 'Windows' && platform.name == 'Chrome'){
+        alert('Please use a different browser(Preferred Microsoft Edge) for better experience. Some features may not work properly in this browser.');
+    }
+}
 
 search.addEventListener('click', searchbar);
 function searchbar() {
@@ -282,8 +287,6 @@ for(let i = 0;i < semlinks.length; i++){
                 throw new Error('Network response was not ok!')
             }
             return response.json()
-        }).then(data => {
-            console.log(data)
         }).catch(error => {
             console.error({'message': `Error: ${error}`})
         })
