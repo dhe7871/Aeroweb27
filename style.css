@@ -19,7 +19,6 @@ nav{
     align-items: center;
     padding-left: 1rem;
     padding-right: 1rem;
-    /* border-bottom: solid 1px grey; */
 }
 nav img{
     height: 8vh;
@@ -53,7 +52,6 @@ nav img{
 .imagebox>img{
     width: 75vw;
     height: 10vw;
-    /* height: 20vh; */
     margin-top: 30vh;
 }
 .expand_more{
@@ -86,9 +84,8 @@ nav img{
     padding-left: 5%;
     padding-right: 5%;
 }
-.col{
+.clmn{
     display: flex;
-
 }
 .oddSem{
     justify-content: start;
@@ -98,7 +95,6 @@ nav img{
 .semCard{
     width: 48vw;
     height: 60vh;
-    /* border: solid 3px grey; */
     border-radius: 10px;
     box-shadow: 5px 5px 15px;
     display: flex;
@@ -107,7 +103,7 @@ nav img{
     
 }
 
-.col a{
+.clmn a{
     text-decoration: none;
     color: white;
 }
@@ -119,9 +115,7 @@ nav img{
     opacity: 0.7;
 }
 .genCard:hover{
-    background-color: rgba(225, 224, 224, 0.979);
-    /* background-image: url("add_box_24dp_FILL0_wght600_GRAD0_opsz24.png"); */
-    
+    background-color: rgba(225, 224, 224, 0.979);    
 }
 
 .heading1{
@@ -141,8 +135,6 @@ nav img{
     justify-content: space-around;
     align-items: center;
     border-top: solid gray 1px;
-
-    /* box-shadow: inset 5px 5px 15px; */
 }
 
 .footer > div{
@@ -159,35 +151,29 @@ nav img{
 .formdiv{
     background-color: whitesmoke;
     font-family: "Gruppo", sans-serif;
-    /* padding-top: 10vh;
-    padding-bottom: 10vh; */
     margin-top: 15vh;
+    border-radius: 20px;
 }
 
 .formname{
     display: flex;
-    /* color: whitesmoke; */
     font-size: 2rem;
-    /* font-weight: 600; */
     padding-left: 2vw;
     padding-right: 2vw;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
-.formname > div{
+#feedbtn{
     width: 65vh;
     text-align: center;
     border: 2px solid whitesmoke;
     border-radius: 20px;
-    /* padding: 1.2vh; */
-    /* font-weight: 600; */
-    /* border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px; */
 }
 
-.formname > div:hover{
+#feedbtn:hover{
     color: black;
     background-color: whitesmoke;
-    font-weight: 600;
     cursor: pointer;
 }
 
@@ -234,7 +220,6 @@ nav img{
     background-color: black;
     color: whitesmoke;
     cursor: pointer;
-    /* transition: all 0.5s ease-in-out; */
 }
 .textarea{
     height: 5rem;
@@ -271,7 +256,7 @@ nav img{
     }
 
 
-    .formname > div{
+    #feedbtn{
         font-size: 1.2rem;
         width: 30vh;
 
@@ -322,7 +307,7 @@ nav img{
     }
 
 
-    .formname > div{
+    #feedbtn{
         font-size: 1.5rem;
         width: 40vh;
 
@@ -367,7 +352,7 @@ nav img{
     }
 
 
-    .formname > div{
+    #feedbtn{
         font-size: 1.6rem;
         width: 60vh;
 

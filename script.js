@@ -1,5 +1,5 @@
-const dataColAPIUrl = 'https://aerowebapi-g8e0crb4ekhsgddg.centralindia-01.azurewebsites.net'
-// const dataColAPIUrl = 'http://127.0.0.1:8000'
+const dataColAPIUrl = 'https://aerowebapi-g8e0crb4ekhsgddg.centralindia-01.azurewebsites.net';
+// const dataColAPIUrl = 'http://127.0.0.1:8000';
 const counterAPIUrl = 'https://counterapi-d6d4drfdawacbxa4.centralindia-01.azurewebsites.net';
 var clicks = 0;
 var feedclick = false;
@@ -27,7 +27,7 @@ semester_links = [
 let i = 1;
 for (value of semester_links) {
     let div = document.createElement('div');
-    div.setAttribute('class', `col ${(i % 2 == 0) ? 'evenSem' : 'oddSem'}`);
+    div.setAttribute('class', `col clmn ${(i % 2 == 0) ? 'evenSem' : 'oddSem'}`);
     div.innerHTML = `<a href=${value} target="_blank" class='mlink'>
                         <div class="semCard genCard">
                             <img src="sem_${i}.jpg" alt="Semester ${i}" style="height: 100%; width: 100%;">
@@ -81,25 +81,35 @@ document.addEventListener('keydown', (event) => {
 
 //code for getting feedback
 feedbtn.addEventListener('click', ()=>{
+    formname = document.getElementsByClassName('formname')[0];
     if(!feedclick){
         form.style.display = 'flex';
-        document.getElementsByClassName('formname')[0].style.justifyContent = 'center';
-        document.getElementById('name').focus()
-        feedbtn.style.borderBottomLeftRadius = '0';
-        feedbtn.style.borderBottomRightRadius = '0';
-        feedbtn.style.backgroundColor = 'whitesmoke';
-        feedbtn.style.color = 'black';
-        // feedbtn.style.fontWeight = '600';
+        formname.style.justifyContent = 'center';
+        formname.style.backgroundColor = 'whitesmoke';
+        formname.style.borderTopLeftRadius = '20px';
+        formname.style.borderTopRightRadius = '20px';
+        
+        document.getElementById('name').focus();
+
+        feedbtn.style.backgroundColor = 'black';
+        feedbtn.style.color = 'whitesmoke';
+        feedbtn.style.borderWidth = '0px';
+        feedbtn.style.borderTopLeftRadius = '0';
+        feedbtn.style.borderTopRightRadius = '0';
+        feedbtn.style.fontWeight = 'normal';
+
         feedclick = true;
     }else{
-
         form.style.display = 'none';
-        document.getElementsByClassName('formname')[0].style.justifyContent = 'start';
-        feedbtn.style.borderBottomLeftRadius = '20px';
-        feedbtn.style.borderBottomRightRadius = '20px';
-        feedbtn.style.backgroundColor = 'black'
-        feedbtn.style.color = 'whitesmoke'
-        // feedbtn.style.fontWeight = 'normal';
+        formname.style.justifyContent = 'start';
+        formname.style.borderTopLeftRadius = '0';
+        formname.style.borderTopRightRadius = '0';
+        formname.style.backgroundColor = 'black';
+
+        feedbtn.style.borderWidth = '2px';
+        feedbtn.style.borderTopLeftRadius = '20px';
+        feedbtn.style.borderTopRightRadius = '20px';
+ 
         feedclick = false;
     }
 })
@@ -108,6 +118,8 @@ feedbtn.addEventListener('mouseover', ()=>{
         feedbtn.style.backgroundColor = 'whitesmoke';
         feedbtn.style.color = 'black';
         feedbtn.style.fontWeight = '600';
+    }else{
+        feedbtn.style.fontWeight = '600';
     }
 })
 feedbtn.addEventListener('mouseout', ()=>{
@@ -115,6 +127,8 @@ feedbtn.addEventListener('mouseout', ()=>{
         feedbtn.style.fontWeight = 'normal';
         feedbtn.style.backgroundColor = 'black';
         feedbtn.style.color = 'whitesmoke';
+    }else{
+        feedbtn.style.fontWeight = 'normal';
     }
 })
 
