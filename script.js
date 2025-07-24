@@ -85,6 +85,7 @@ document.addEventListener("keydown", (event) => {
 //code for getting feedback
 feedbtn.addEventListener("click", () => {
     const formname = document.getElementsByClassName("formname")[0];
+    const befAftFeedBtn = document.querySelectorAll(".befAftFeedBtn");
     if (!feedclick) {
         form.style.display = "flex";
         formname.style.justifyContent = "center";
@@ -100,6 +101,9 @@ feedbtn.addEventListener("click", () => {
         feedbtn.style.borderTopLeftRadius = "0";
         feedbtn.style.borderTopRightRadius = "0";
         feedbtn.style.fontWeight = "normal";
+        befAftFeedBtn.forEach((node) => {
+            node.style.display = "block";
+        });
 
         feedclick = true;
     } else {
@@ -112,6 +116,9 @@ feedbtn.addEventListener("click", () => {
         feedbtn.style.borderWidth = "2px";
         feedbtn.style.borderTopLeftRadius = "20px";
         feedbtn.style.borderTopRightRadius = "20px";
+        befAftFeedBtn.forEach((node) => {
+            node.style.display = "none";
+        });
 
         feedclick = false;
     }
@@ -151,7 +158,7 @@ submitbtn.addEventListener("click", () => {
             break;
         }
         if (key == "email") {
-            if(!value.includes('@')){
+            if (!value.includes("@")) {
                 message = "*Please enter a valid email.";
             }
         }
@@ -194,7 +201,7 @@ submitbtn.addEventListener("click", () => {
         document.getElementById("email").value = "";
         document.getElementById("feedback").value = "";
         document.getElementById("submsnmsg").innerText = message;
-        document.getElementById("submsnmsg").style.color = "black";
+        document.getElementById("submsnmsg").style.color = "green";
         document.getElementById("submsnmsg").style.visibility = "visible";
     } else {
         document.getElementById("submsnmsg").innerText = message;

@@ -29,7 +29,3 @@ export const addDataTable = (keys, data) => {
     dataDiv.style.opacity = "1";
     dataDiv.style.transform = "translateY(0)";
 };
-
-function whatsapp(){
-    console.log("hello chatgpt")
-}
