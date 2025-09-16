@@ -40,11 +40,12 @@ for (value of semester_links) {
 }
 
 window.onload = function () {
-    if (platform.os.family == "Windows" && platform.name == "Chrome") {
-        alert(
-            "Please use a different browser(Preferred Microsoft Edge) for better experience. Some features may not work properly in this browser."
-        );
-    }
+    // if (platform.os.family == "Windows" && platform.name == "Chrome") {
+    //     alert(
+    //         "Please use a different browser(Preferred Microsoft Edge) for better experience. Some features may not work properly in this browser."
+    //     );
+    // }
+    window.location.href = "https://dhe7871.github.io/Aeroweb27/down.html"
 };
 
 search.addEventListener("click", searchbar);
