@@ -14,12 +14,12 @@ const feedbtn = document.getElementById("feedbtn");
 const submitbtn = document.getElementById("submitbtn");
 
 const semester_links = [
-    "https://iitkgpacin-my.sharepoint.com/:f:/g/personal/prajapatidheeraj_kgpian_iitkgp_ac_in/Eia039srhUdOtmT9ZUe2_-4BTHwumb9GPpd0Uphy4wjNvA",
-    "https://iitkgpacin-my.sharepoint.com/:f:/g/personal/prajapatidheeraj_kgpian_iitkgp_ac_in/EqT5KXvHFp5DpkY7U04PPJsBvGcmoM7LjBYxE-xMFwXPtw?e=RMa96B",
-    "https://iitkgpacin-my.sharepoint.com/:f:/g/personal/prajapatidheeraj_kgpian_iitkgp_ac_in/EkgXGaG7GBpBtr0S05xksakBPP12dRUxo2xP5AQNU5GFZQ?e=LngMDV",
-    "https://iitkgpacin-my.sharepoint.com/:f:/g/personal/prajapatidheeraj_kgpian_iitkgp_ac_in/EvKHrcTfVK9GulzIlMQhTAgB6au_wDanMAcE4Dkq4b3Syg?e=z3dI9h",
-    "https://iitkgpacin-my.sharepoint.com/:f:/g/personal/prajapatidheeraj_kgpian_iitkgp_ac_in/Epr_ubrUKIJOkk8_ICPxqO8BDcxrNfG1NFbZPsRev9iDTQ",
-    "https://iitkgpacin-my.sharepoint.com/:f:/g/personal/prajapatidheeraj_kgpian_iitkgp_ac_in/EqJWjXB7pUdDqMcJ9pCjUL4B8ZjTf-uVcYLyQuHYOJ3nlA",
+    "https://drive.google.com/drive/folders/1PAtUeQ2I57Mgrtp05f4fwn_Z3vjcNBiz?usp=sharing",
+    "https://drive.google.com/drive/folders/1JPNjE_wg5efShFRTDi9xrwv_dqJ7UlP7?usp=sharing",
+    "https://drive.google.com/drive/folders/1ly3sLjYd43nGwm4LyaiYJYA1NaCiliEP?usp=sharing",
+    "https://drive.google.com/drive/folders/1OKqN9OOCNTxklp1lcDbJ7KzV4bfhmhNN?usp=sharing",
+    "https://drive.google.com/drive/folders/1XGhzTsVAe1VeMdNBNVTVrd76mb0-Jvpq?usp=sharing",
+    "https://drive.google.com/drive/folders/1XGhzTsVAe1VeMdNBNVTVrd76mb0-Jvpq?usp=sharing",
     "./notFound/not_found.html",
     "./notFound/not_found.html",
     "./notFound/not_found.html",
@@ -39,14 +39,14 @@ for (value of semester_links) {
     i++;
 }
 
-window.onload = function () {
-    // if (platform.os.family == "Windows" && platform.name == "Chrome") {
-    //     alert(
-    //         "Please use a different browser(Preferred Microsoft Edge) for better experience. Some features may not work properly in this browser."
-    //     );
-    // }
-    window.location.href = "https://dhe7871.github.io/Aeroweb27/down.html"
-};
+// window.onload = function () {
+//     // if (platform.os.family == "Windows" && platform.name == "Chrome") {
+//     //     alert(
+//     //         "Please use a different browser(Preferred Microsoft Edge) for better experience. Some features may not work properly in this browser."
+//     //     );
+//     // }
+//     window.location.href = "https://dhe7871.github.io/Aeroweb27/down.html"
+// };
 
 search.addEventListener("click", searchbar);
 function searchbar() {
