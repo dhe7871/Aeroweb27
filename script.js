@@ -32,21 +32,12 @@ for (value of semester_links) {
     div.setAttribute("class", `col clmn ${i % 2 == 0 ? "evenSem" : "oddSem"}`);
     div.innerHTML = `<a href=${value} target="_blank" class='mlink'>
                         <div class="semCard genCard">
-                            <img src="./images/sem_${i}.jpg" alt="Semester ${i}" style="height: 100%; width: 100%;">
+                            <img src="./images/sem_${i}.png" alt="Semester ${i}" style="height: 100%; width: 100%;">
                         </div>
                     </a>`;
     semesters.appendChild(div);
     i++;
 }
-
-// window.onload = function () {
-//     // if (platform.os.family == "Windows" && platform.name == "Chrome") {
-//     //     alert(
-//     //         "Please use a different browser(Preferred Microsoft Edge) for better experience. Some features may not work properly in this browser."
-//     //     );
-//     // }
-//     window.location.href = "https://dhe7871.github.io/Aeroweb27/down.html"
-// };
 
 search.addEventListener("click", searchbar);
 function searchbar() {
@@ -90,14 +81,13 @@ feedbtn.addEventListener("click", () => {
     if (!feedclick) {
         form.style.display = "flex";
         formname.style.justifyContent = "center";
-        formname.style.backgroundColor = "whitesmoke";
+        formname.style.backgroundColor = "rgba(245, 245, 245, 0.196)";
         formname.style.borderTopLeftRadius = "20px";
         formname.style.borderTopRightRadius = "20px";
 
         document.getElementById("name").focus();
 
         feedbtn.style.backgroundColor = "black";
-        feedbtn.style.color = "whitesmoke";
         feedbtn.style.borderWidth = "0px";
         feedbtn.style.borderTopLeftRadius = "0";
         feedbtn.style.borderTopRightRadius = "0";
@@ -114,7 +104,7 @@ feedbtn.addEventListener("click", () => {
         formname.style.borderTopRightRadius = "0";
         formname.style.backgroundColor = "black";
 
-        feedbtn.style.borderWidth = "2px";
+        feedbtn.style.borderWidth = "1px";
         feedbtn.style.borderTopLeftRadius = "20px";
         feedbtn.style.borderTopRightRadius = "20px";
         befAftFeedBtn.forEach((node) => {
@@ -126,8 +116,7 @@ feedbtn.addEventListener("click", () => {
 });
 feedbtn.addEventListener("mouseover", () => {
     if (!feedclick) {
-        feedbtn.style.backgroundColor = "whitesmoke";
-        feedbtn.style.color = "black";
+        feedbtn.style.backgroundColor = "rgba(245, 245, 245, 0.196)";
         feedbtn.style.fontWeight = "600";
     } else {
         feedbtn.style.fontWeight = "600";
