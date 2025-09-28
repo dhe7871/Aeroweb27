@@ -152,6 +152,7 @@ nav img {
 }
 
 .footer>div {
+    font-size: 1.2rem;
     border: 1px solid rgba(245, 245, 245, 0.466);
     border-radius: 20px;
     padding: 0.2rem 1rem;
