@@ -287,7 +287,7 @@ nav img {
     }
 
     .semCard {
-        height: 30vh;
+        height: 25vh;
     }
 
     .heading1 {
@@ -302,7 +302,6 @@ nav img {
     #feedbtn {
         font-size: 1.2rem;
         width: 30vh;
-
     }
 
     .feedform {
@@ -339,7 +338,7 @@ nav img {
 
     .bookCard {
         width: 70vw;
-        height: 20vh;
+        height: 15vh;
     }
 
     .books {
@@ -347,7 +346,7 @@ nav img {
     }
 
     .semCard {
-        height: 40vh;
+        height: 30vh;
     }
 
     .heading1 {
