@@ -20,7 +20,7 @@ const semester_links = [
     "https://drive.google.com/drive/folders/1OKqN9OOCNTxklp1lcDbJ7KzV4bfhmhNN?usp=sharing",
     "https://drive.google.com/drive/folders/1XGhzTsVAe1VeMdNBNVTVrd76mb0-Jvpq?usp=sharing",
     "https://drive.google.com/drive/folders/1zTDuQxsvfbgPof7sn86HYQrKKwjLvrEZ?usp=sharing",
-    "./notFound/not_found.html",
+    "https://drive.google.com/drive/folders/1ewZhqT19aRid14hsuLm4Du1Xn6XxoQBs?usp=sharing",
     "./notFound/not_found.html",
     "./notFound/not_found.html",
     "./notFound/not_found.html",

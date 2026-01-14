@@ -1,11 +1,11 @@
 * {
-    color: white;
-    background-color: black;
-
     font-family: "Gruppo", sans-serif;
     font-optical-sizing: auto;
     /* font-weight: 600; */
     font-style: normal;
+
+    color: white;
+    background-color: black;
 }
 
 ::-webkit-scrollbar {
@@ -21,12 +21,17 @@
     background: rgb(189, 188, 188);
 }
 
+
+
+
+
 nav {
     height: 10vh;
     display: flex;
     align-items: center;
     padding-left: 1rem;
     padding-right: 1rem;
+    /* background-color: red; */
 }
 
 nav img {
@@ -83,11 +88,12 @@ nav img {
     font-size: 4rem;
     font-weight: 600;
 }
+
 .bookCard {
     width: 60vw;
     height: 35vh;
     border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.463);    
+    box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.463);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -234,7 +240,8 @@ nav img {
     font-size: 1.2rem;
     border: 2px solid black;
 }
-.input:focus{
+
+.input:focus {
     box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.509);
 }
 
@@ -432,5 +439,48 @@ nav img {
 
     #submitbtn {
         font-size: 1.4rem;
+    }
+}
+
+
+.infotrain {
+    background-color: rgb(245, 245, 245);
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+
+    font-weight: bold;
+
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+
+}
+
+.infotext {
+    background-color: whitesmoke;
+    color: green;
+    animation: blinkingAnimation 5s ease-in-out infinite;
+}
+
+.infotext:hover {
+    animation: none;
+}
+
+@keyframes blinkingAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
