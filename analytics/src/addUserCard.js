@@ -109,11 +109,5 @@ export const addUserCard = (user, data) => {
                 }
             </div>
     `;
-
-    const uaArrow = document.getElementById("uaArrow");
-    const visitArrow = document.getElementById("visitArrow");
-
-    uaArrow.addEventListener("click", () => {
-        
-    })
+ 
 };
