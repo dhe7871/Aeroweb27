@@ -1,5 +1,6 @@
 import { tbody } from "./script.js";
 import { totalTimeSpent } from "./totalTimeSpent.js";
+import { formatTimeString } from "./formatTimeString.js";
 
 export const addDataTable = (keys, data) => {
     const dataDiv = document.querySelector(".dataDiv");
@@ -20,7 +21,7 @@ export const addDataTable = (keys, data) => {
                     ? semesterVisits.indexOf(Math.max(...semesterVisits))
                     : "-"
             }</td>
-            <td>${visits[visits.length - 1]["entry"]}</td>
+            <td>${formatTimeString(visits[visits.length - 1]["entry"])}</td>
         `;
         tr.classList.add("dataLine");
         tbody.appendChild(tr, "beforeend");

@@ -33,4 +33,6 @@ export const attachEventListeners = () => {
             isCardOnScr = false;
         }
     });
+
+    const uaArrow = document.getElementById("uaArrow");
 };

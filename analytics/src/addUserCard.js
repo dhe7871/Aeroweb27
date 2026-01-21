@@ -6,6 +6,7 @@ console.log(controlArrow);
 
 Array.from(controlArrow).forEach((arrow, idx) => {
     arrow.addEventListener("click", () => {
+        console.log("Arrow Clicked")
         switch (idx) {
             case 0:
                 if (uaDisplayed + 2 <= Object.keys(data.useragent).length) {
@@ -52,7 +53,9 @@ export const addUserCard = (user, data) => {
                     .join("\n")}
                 ${
                     Object.keys(data.useragent).length > 1
-                        ? `<p style="text-align: center;"><span class="material-symbols-outlined controlArrow">${`arrow_downward`}</span></p>`
+                        ? `<p style="text-align: center; margin-top: 0.5rem; margin-bottom: 0.5rem;">
+                                <span class="material-symbols-outlined controlArrow" id="uaArrow">${`arrow_downward`}</span>
+                            </p>`
                         : ""
                 }
             </div>
@@ -77,7 +80,9 @@ export const addUserCard = (user, data) => {
                 </div>
                 ${
                     Object.keys(data.visits).length > 1
-                        ? `<p style="text-align: center;"><span class="material-symbols-outlined controlArrow">arrow_downward</span></p>`
+                        ? `<p style="text-align: center; margin-top: 0.5rem; margin-bottom: 0.5rem;">
+                                <span class="material-symbols-outlined controlArrow" id="visitArrow">arrow_downward</span>
+                            </p>`
                         : ""
                 }            
             </div>
@@ -104,4 +109,11 @@ export const addUserCard = (user, data) => {
                 }
             </div>
     `;
+
+    const uaArrow = document.getElementById("uaArrow");
+    const visitArrow = document.getElementById("visitArrow");
+
+    uaArrow.addEventListener("click", () => {
+        
+    })
 };
