@@ -14,13 +14,13 @@ const feedbtn = document.getElementById("feedbtn");
 const submitbtn = document.getElementById("submitbtn");
 
 const semester_links = [
-    "https://drive.google.com/drive/folders/1PAtUeQ2I57Mgrtp05f4fwn_Z3vjcNBiz?usp=sharing",
-    "https://drive.google.com/drive/folders/1JPNjE_wg5efShFRTDi9xrwv_dqJ7UlP7?usp=sharing",
-    "https://drive.google.com/drive/folders/1ly3sLjYd43nGwm4LyaiYJYA1NaCiliEP?usp=sharing",
-    "https://drive.google.com/drive/folders/1OKqN9OOCNTxklp1lcDbJ7KzV4bfhmhNN?usp=sharing",
-    "https://drive.google.com/drive/folders/1XGhzTsVAe1VeMdNBNVTVrd76mb0-Jvpq?usp=sharing",
-    "https://drive.google.com/drive/folders/1zTDuQxsvfbgPof7sn86HYQrKKwjLvrEZ?usp=sharing",
-    "https://drive.google.com/drive/folders/1ewZhqT19aRid14hsuLm4Du1Xn6XxoQBs?usp=sharing",
+    "https://drive.google.com/drive/folders/1W5iLmx-LIYZMCkJSbfsjHAjk-IAE2XDS?usp=sharing",
+    "https://drive.google.com/drive/folders/1YceXlEzYE1OEE8X1HScYkg78TW6Le0qr?usp=sharing",
+    "https://drive.google.com/drive/folders/1YPbs9uDRAqTdpRE5Rn-U1HOg5AiD50VJ?usp=sharing",
+    "https://drive.google.com/drive/folders/1dTWbQtVXZeCUs0ueHSxan6I3HvqPVC2P?usp=sharing",
+    "https://drive.google.com/drive/folders/1HGws084RQdgdJByCuA687GS5uPGcHgqj?usp=sharing",
+    "https://drive.google.com/drive/folders/1njyTJhbyx7zIIaiML2PqoywS0JAS5T4b?usp=sharing",
+    "https://drive.google.com/drive/folders/1g32YsO2cRSag59YcJ61b23wcOxKrrqoe?usp=sharing",
     "./notFound/not_found.html",
     "./notFound/not_found.html",
     "./notFound/not_found.html",
